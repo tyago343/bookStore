@@ -1,0 +1,23 @@
+{
+  "name": "books_store",
+  "version": "1.0.0",
+  "description": "This is a books store based in JS. Build with React-redux, Express, Passport, babel and more.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Santiago Casanova",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
+    "ps": "^1.0.0",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.9"
+  }
+}
