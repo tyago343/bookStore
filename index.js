@@ -8,6 +8,7 @@ const path = require ('path')
 const db = require ('./db/index.js')
 
 app.use(express.static('public'))
+app.use(express.static('dist'))
 db.sync({ force : true })
 
 //For any path, we send index.html for view
