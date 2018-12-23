@@ -22,7 +22,7 @@ const User = db.define('user', {
         allowNull : false,
         unique : true,
         validate :{
-            isEmail
+            isEmail : true
         }
     },
     userName : {
@@ -34,8 +34,7 @@ const User = db.define('user', {
         allowNull : false
     },
     salt : {
-        type : Sequelize.STRING,
-        allowNull : false
+        type : Sequelize.STRING
     },
     admin : {
         type : Sequelize.BOOLEAN,
@@ -43,8 +42,8 @@ const User = db.define('user', {
     }
 })
 //add the association between Books and Users, because Users can have many favourites books
-Book.belongsToMany(User)
-User.belongsToMany(Book)
+Book.belongsToMany(User, { through : "favourite"})
+User.belongsToMany(Book, { through : "favourite"})
 
 //we define hash functions for password encryption
 User.passwordSalt = () => (
@@ -55,7 +54,7 @@ User.prototype.passwordHash = (password, salt) => (
 )
 //this hook use the hash functions before create the user for password encryption
 User.hook('beforeCreate', user => {
-    user.salt = user.passwordSalt()
+    user.salt = User.passwordSalt()
     let { password, salt } = user
     user.password = user.passwordHash(password, salt)
 })

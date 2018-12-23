@@ -30,5 +30,4 @@ const Book = db.define('book', {
         type : Sequelize.STRING
     }
 })
-Book.belongsTo(User)
 module.exports = Book
