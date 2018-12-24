@@ -8,6 +8,8 @@ const path = require ('path')
 const db = require ('./db/index.js')
 const userRoutes = require('./routes/api/userRoutes.js')
 const commentRoutes = require ('./routes/api/commentRoutes.js')
+const bookRoutes = require ('./routes/api/bookRoutes.js')
+const categoryRoutes = require ('./routes/api/categoryRoutes.js')
 
 //Use the body-parser middleware to extract the entire body portion of an incoming request stream and exposes it on req.body
 app.use('/*', bodyParser.urlencoded({
@@ -23,6 +25,7 @@ db.sync({ force : true })
 app.use('/api/user/', userRoutes)
 app.use('/api/comment/', commentRoutes)
 app.use('/api/book/', bookRoutes)
+app.use('/api/category/', categoryRoutes)
 app.use('/*', (req, res) => {
     res.sendFile(path.join(__dirname, './src/index.html'))
 })
