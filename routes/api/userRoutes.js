@@ -14,18 +14,25 @@ router.post('/', (req, res) => {
 })
 //we return an especific user
 router.get('/:id', (req, res) => {
-    User.findByPk(req.param.id)
+    User.findByPk(req.params.id)
     .then(user=>{
         res.send(user)
     })
 })
 //modify an especific user
 router.put('/:id', (req, res) => {
-
+    User.findByPk(req.params.id)
+    .then(user=>{
+        user.update(req.body)
+        res.sendStatus(200)
+    })
 })
 //delete an especific user
 router.delete('/:id', (req, res) => {
-
+    User.findByPk(req.params.id)
+    .then(user=>{
+        user.destroy()
+        res.sendStatus(200)
+    })
 })
-
 module.exports = router

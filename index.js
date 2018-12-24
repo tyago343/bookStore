@@ -7,6 +7,7 @@ const path = require ('path')
 //import our files, db, models, routers
 const db = require ('./db/index.js')
 const userRoutes = require('./routes/api/userRoutes.js')
+const commentRoutes = require ('./routes/api/commentRoutes.js')
 
 //Use the body-parser middleware to extract the entire body portion of an incoming request stream and exposes it on req.body
 app.use('/*', bodyParser.urlencoded({
@@ -20,6 +21,8 @@ db.sync({ force : true })
 
 //For any path, we send index.html for view
 app.use('/api/user/', userRoutes)
+app.use('/api/comment/', commentRoutes)
+app.use('/api/book/', bookRoutes)
 app.use('/*', (req, res) => {
     res.sendFile(path.join(__dirname, './src/index.html'))
 })
