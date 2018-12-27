@@ -17,6 +17,10 @@ const Comment = db.define('comment', {
     body : {
         type : Sequelize.STRING,
         allowNull : false
+    },
+    vote : {
+        type : Sequelize.INTEGER,
+        allowNull : false
     }
 })
 Comment.belongsTo(User)

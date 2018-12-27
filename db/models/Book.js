@@ -28,6 +28,9 @@ const Book = db.define('book', {
     },
     linkToBuy : {
         type : Sequelize.STRING
+    },
+    year : {
+        type : Sequelize.STRING
     }
 })
 module.exports = Book
