@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Route, Switch, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import AllBooks from './AllBooks.js'
 
 export default class Main extends Component {
     constructor(props){
@@ -9,11 +10,9 @@ export default class Main extends Component {
     }
     render() {
         return (
-            <div>
-                <h1>
-                    Hello World!
-                </h1>
-            </div>
+            <Switch>
+                <Route path='/store' component={AllBooks} />
+            </Switch>
         )
     }
 }
