@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import Navbar from './Navbar';
 
 export default class AllBooks extends Component {
     constructor(props){
@@ -6,8 +7,6 @@ export default class AllBooks extends Component {
 
     }
     render(){
-        <div>
-            Este vendria a ser el maldito AllBooks
-        </div>
+        <Navbar />
     }
 }
