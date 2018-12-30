@@ -8,12 +8,12 @@ const db = require ('../index.js')
 const Book = require ('./Book.js')
 
 //define the Book model
-const Category = db.define('category', {
+const Genre = db.define('genre', {
     name : {
         type : Sequelize.STRING,
         allowNull : false
     }
 })
-Category.belongsToMany(Book, { through : "bookscategories" })
-Book.belongsToMany(Category, { through : "bookscategories" })
-module.exports = Category
+Genre.belongsToMany(Book, { through : "booksgenres" })
+Book.belongsToMany(Genre, { through : "booksgenres" })
+module.exports = Genre

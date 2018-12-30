@@ -41,9 +41,6 @@ const User = db.define('user', {
         defaultValue : false
     }
 })
-//add the association between Books and Users, because Users can have many favourites books
-Book.belongsToMany(User, { through : "favourite"})
-User.belongsToMany(Book, { through : "favourite"})
 
 //we define hash functions for password encryption
 User.passwordSalt = () => (

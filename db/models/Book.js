@@ -14,7 +14,7 @@ const Book = db.define('book', {
         allowNull : false
     },
     synopsis : {
-        type : Sequelize.STRING,
+        type : Sequelize.TEXT,
         allowNull : false
     },
     author : {
@@ -33,4 +33,7 @@ const Book = db.define('book', {
         type : Sequelize.STRING
     }
 })
+//add the association between Books and Users, because Users can have many favourites books
+Book.belongsToMany(User, { through : 'favourite'})
+User.belongsToMany(Book, { through : "favourite"})
 module.exports = Book
