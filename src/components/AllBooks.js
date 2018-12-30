@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import Navbar from './Navbar';
 
 export default class AllBooks extends Component {
@@ -7,6 +7,8 @@ export default class AllBooks extends Component {
 
     }
     render(){
-        <Navbar />
+        return (
+            <p>HJola</p>
+        )
     }
 }

@@ -3,6 +3,7 @@ import { Link, Route, Switch, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import AllBooks from './AllBooks.js'
+import Navbar from './Navbar.js';
 
 export default class Main extends Component {
     constructor(props){
@@ -10,9 +11,12 @@ export default class Main extends Component {
     }
     render() {
         return (
-            <Switch>
-                <Route path='/store' component={AllBooks} />
-            </Switch>
+            <div>
+                <Navbar />
+                <Switch>
+                    <Route path='/store' component={AllBooks} />
+                </Switch>
+            </div>
         )
     }
 }
