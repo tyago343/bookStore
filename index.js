@@ -20,7 +20,7 @@ app.use('/*', bodyParser.json())
 
 app.use(express.static('public'))
 app.use(express.static('dist'))
-db.sync({ force : true })
+db.sync({ force : false })
 
 //For any path, we send index.html for view
 app.use('/creador', ()=>{
