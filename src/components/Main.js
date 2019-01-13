@@ -4,6 +4,7 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import AllBooks from './AllBooks.js'
 import Navbar from './Navbar.js';
+import SingleBook from './SingleBook.js';
 
 export default class Main extends Component {
     constructor(props){
@@ -15,6 +16,7 @@ export default class Main extends Component {
                 <Navbar />
                 <Switch>
                     <Route path='/store' component={AllBooks} />
+                    <Route path='/book' component={SingleBook} />
                 </Switch>
             </div>
         )
