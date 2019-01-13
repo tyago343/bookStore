@@ -22,18 +22,11 @@ app.use(express.static('public'))
 app.use(express.static('dist'))
 db.sync({ force : false })
 
-//For any path, we send index.html for view
-app.use('/creador', ()=>{
-    Book.create({
-        title : 'book title '+n,
-        synopsis : 'In exercitation aliquip esse nulla pariatur. Tempor sit tempor eu excepteur enim commodo occaecat duis adipisicing nisi quis laborum cillum. Proident laboris proident duis enim laboris excepteur minim dolor in reprehenderit. Qui reprehenderit eu fugiat aliquip est. Mollit nostrud mollit incididunt pariatur voluptate ullamco deserunt minim pariatur.',
-        year : '190'+n 
-    })
-})
 app.use('/api/user/', userRoutes)
 app.use('/api/comment/', commentRoutes)
 app.use('/api/book/', bookRoutes)
 app.use('/api/genre/', genreRoutes)
+//For any path, we send index.html for view
 app.use('/*', (req, res) => {
     res.sendFile(path.join(__dirname, './src/index.html'))
 })

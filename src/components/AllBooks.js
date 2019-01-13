@@ -11,15 +11,20 @@ class AllBooks extends Component {
     }
     render(){
         const { books } = this.props
-        console.log(books)
         return (
-            <div>
-                <ul>
+            <section className="row">
                 {books && books.map(book=>
-                    <li><img src={book.image}/></li>
+                    <div class="card col-lg-3 col-md-4 col-sm-6 col-xs-12" style={{ margin: "15px"}}>
+                    <i class="far fa-heart card-heart" style={{color: "#e7324d"}}></i>
+                    <img src={book.image} class="card-img-top" alt="..." />
+                    <div class="card-body">
+                      <h5 class="card-title-custom">"{book.title}"</h5>
+                      <p class="card-text card-synapsis">{book.synopsis}</p>
+                      <h6 className="card-author">{book.author}</h6>
+                    </div>
+                  </div>
                 )}
-                </ul>
-            </div>
+            </section>
         )
     }
 }
