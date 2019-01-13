@@ -14,10 +14,12 @@ export default class Main extends Component {
         return (
             <div>
                 <Navbar />
-                <Switch>
-                    <Route path='/store' component={AllBooks} />
-                    <Route path='/book' component={SingleBook} />
-                </Switch>
+                <div className="container-fluid">
+                    <Switch>
+                        <Route path='/store' component={AllBooks} />
+                        <Route path='/book' component={SingleBook} />
+                    </Switch>
+                </div>
             </div>
         )
     }

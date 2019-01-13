@@ -9,7 +9,7 @@ const createGenre = function(n){
 const createBook = function(n){
     Book.create({
         title : 'book title '+n,
-        synopsis : 'laborum cillum. Proident laboris proident  est. Mollit nostrud mollit incididunt pariatur voluptate ullamco deserunt minim pariatur.',
+        synopsis : 'Commodo id elit sint sit. Qui cupidatat proident quis labore. Ipsum ad dolore excepteur cillum laborum velit velit non incididunt excepteur fugiat cillum dolore incididunt. Occaecat duis ipsum adipisicing enim cupidatat tempor nisi consequat elit enim aliqua tempor. Est sunt nisi tempor id. Ipsum aliqua excepteur proident officia dolor dolor irure nisi ex est esse aliqua sint adipisicing. Ullamco reprehenderit fugiat cupidatat aliquip nulla mollit labore.',
         year : '190'+n 
     })
 }

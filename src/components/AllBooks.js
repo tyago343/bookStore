@@ -14,7 +14,7 @@ class AllBooks extends Component {
         return (
             <section className="row">
                 {books && books.map(book=>
-                    <div class="card col-lg-3 col-md-4 col-sm-6 col-xs-12" style={{ margin: "15px"}}>
+                    <div class="card col-lg-3 col-md-4 col-sm-6 col-xs-12" style={{ margin: "15px"}} key={book.id}>
                     <i class="far fa-heart card-heart" style={{color: "#e7324d"}}></i>
                     <img src={book.image} class="card-img-top" alt="..." />
                     <div class="card-body">

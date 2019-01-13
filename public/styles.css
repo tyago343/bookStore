@@ -7,6 +7,8 @@
 .search-field{
     margin-top: 10px !important
 }
+
+/* AllBooks Styles */
 .card-title-custom{
     font-size: 1.3em;
     color: #45ba4f;
@@ -29,4 +31,29 @@
     top: 2%;
     font-size: 2em;
     font-weight: 100;
+}
+/* SingleBook Styles */
+.book-author{
+    font: 2em bold;
+    margin: 10px 0
+}
+.book-year{
+    font: 2em bold;
+    margin: 10px 0
+}
+.book-title{
+    font: 3em bolder;
+    color:  #45ba4f;
+    margin-bottom: 25px
+}
+.book-synopsis{
+    font-size: 1.4em;
+    margin-bottom: 30px
+}
+.book-buy{
+    position: absolute;
+    right: 5%
+}
+.book-publisher{
+    display: inline;
 }

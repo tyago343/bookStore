@@ -12,8 +12,25 @@ class SingleBook extends Component {
     render(){
         const { book } = this.props
         return (
-            <div>
-                {book && book.image}
+            <div style={{marginTop: '10px'}}>
+                <div className='row'>
+                    <section className='col-md-3 col-xs-12'>
+                        <img className='img-fluid' src={book.image} alt="Book image"/>
+                    </section>
+                    <section className='col-md-9 col-xs-12'>
+                        <h2 className='book-title'>"{book.title}"</h2>
+                        <p className='book-synopsis'>Synopsis: {book.synopsis}</p>
+                    </section>
+                </div>
+                <div className="row">
+                    <section className='col-md-3 col-xs-12'>
+                        <h3 className='book-author'>{book.author}</h3>
+                        <h5 className='book-year'>Year published: {book.year}</h5>
+                    </section>
+                    <section className='col-md-9 col-xs-12'>
+                        <a className='btn btn-default' href='http://www.google.com' disabled={!!book.linkToBuy} >LINK TO BUY</a>
+                    </section>
+                </div>
             </div>
         )
     }
