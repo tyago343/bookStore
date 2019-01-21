@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
 class NewUser extends Component{
     constructor(props){
@@ -14,11 +15,14 @@ class NewUser extends Component{
         this.handleChange = this.handleChange.bind(this)
     }
     handleChange(evt){
-        const value = evt.target.value
+        var value = evt.target.value
         const key = evt.target.name
         this.setState({
             [key] : value
         })
+    }
+    handleSubmit(){
+
     }
     render(){
         const { firstName, lastName, email, userName, password, admin } = this.state
