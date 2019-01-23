@@ -5,7 +5,7 @@ class NewUser extends Component{
     constructor(props){
         super(props)
         this.state = {
-            firstName : '   ',
+            firstName : '',
             lastName : '',
             email : '',
             userName : '',
@@ -17,12 +17,15 @@ class NewUser extends Component{
     handleChange(evt){
         var value = evt.target.value
         const key = evt.target.name
+        if(key === 'userName'){
+           value = value.toLowerCase()
+        }
         this.setState({
             [key] : value
         })
     }
     handleSubmit(){
-
+        axios.post('/api/user/', this.state)
     }
     render(){
         const { firstName, lastName, email, userName, password, admin } = this.state
@@ -47,10 +50,6 @@ class NewUser extends Component{
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter a password" value={password} onChange={this.handleChange}/>
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="admin" name="admin" checked={admin} onChange={this.handleChange}/>
-                    <label class="form-check-label" for="admin">Admin?</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
